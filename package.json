@@ -1,0 +1,19 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "personal portfolio ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanthvagale/Personal-Portfolio.git"
+  },
+  "author": "kanth vagale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanthvagale/Personal-Portfolio/issues"
+  },
+  "homepage": "https://github.com/kanthvagale/Personal-Portfolio#readme"
+}
