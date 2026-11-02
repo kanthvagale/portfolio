@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>personalportfolio</title>
-    <link
-      rel="preload"
-      href="/portfolio/fonts/SpaceGrotesk-Variable.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <script type="module" crossorigin src="/portfolio/assets/index-DDmmIxdo.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-C74fKKqQ.css">
+    <title>Kanth Vagale Portfolio</title>
+    <script>
+      // Set the theme before first paint so the page never flashes the wrong one.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (error) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-BeveYA97.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DLMtMrYB.css">
   </head>
   <body>
     <div id="root"></div>
