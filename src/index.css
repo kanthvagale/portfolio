@@ -1,9 +1,65 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Space Grotesk Variable";
+  src: url("./assets/fonts/SpaceGrotesk-Variable.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-display: "Space Grotesk Variable", system-ui, sans-serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-paper: #fafaf8;
+  --color-paper-dim: #f1f0ec;
+  --color-ink: #121212;
+  --color-ink-soft: #52514c;
+  --color-accent: #4f46e5;
+}
+
+/* The theme is set on <html> by the inline script in index.html and by ThemeToggle. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root[data-theme="dark"] {
+  --color-paper: #0f0f10;
+  --color-paper-dim: #18181a;
+  --color-ink: #ecebe6;
+  --color-ink-soft: #a3a29c;
+  --color-accent: #8b8cf6;
+  color-scheme: dark;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  /* The section rail's ruler stands in for the native scrollbar. */
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* CustomCursor draws its own circle on mouse devices; text fields keep the native cursor. */
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
+html.custom-cursor :is(input, textarea, select, [contenteditable="true"]) {
+  cursor: auto !important;
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
