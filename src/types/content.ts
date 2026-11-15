@@ -14,7 +14,8 @@ export interface Profile {
   availability: string;
   github: string;
   linkedin: string;
-  resumeHref: string;
+  resumeHref: string; // full URL, base path included
+  resumeFileName: string; // name the downloaded file is saved under
 }
 
 export interface ExperienceItem {

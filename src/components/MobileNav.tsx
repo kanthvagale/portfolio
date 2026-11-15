@@ -6,10 +6,11 @@ import Button from "./Button";
 interface MobileNavProps {
   links: NavLink[];
   resumeHref: string;
+  resumeFileName: string;
   onClose: () => void;
 }
 
-export default function MobileNav({ links, resumeHref, onClose }: MobileNavProps) {
+export default function MobileNav({ links, resumeHref, resumeFileName, onClose }: MobileNavProps) {
   const handleClick = (href: string) => {
     scrollToId(href.replace("#", ""));
     onClose();
@@ -36,7 +37,7 @@ export default function MobileNav({ links, resumeHref, onClose }: MobileNavProps
         <Button
           as="a"
           href={resumeHref}
-          download
+          download={resumeFileName}
           variant="primary"
           className="mt-2 w-full"
           onClick={onClose}

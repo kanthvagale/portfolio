@@ -6,6 +6,8 @@ import type {
   Project,
   SkillCategory,
 } from "../types/content";
+// Imported so Vite bundles the PDF and returns its URL, base path included.
+import resumeUrl from "./resume.pdf?url";
 
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
@@ -27,7 +29,8 @@ export const profile: Profile = {
   availability: "Open to opportunities",
   github: "https://github.com/kanthvagale",
   linkedin: "https://linkedin.com/in/kanthvagale",
-  resumeHref: "resume.pdf",
+  resumeHref: resumeUrl,
+  resumeFileName: "Kanth-Vagale-Resume.pdf",
 };
 
 export const techPills: string[] = [

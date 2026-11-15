@@ -11,7 +11,6 @@ import ThemeToggle from "./ThemeToggle";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const activeId = useActiveSection(navLinks.map((link) => link.href.replace("#", "")));
-  const resumeHref = `${import.meta.env.BASE_URL}${profile.resumeHref}`;
   const headerRef = useRef<HTMLElement>(null);
 
   // Share the header's height so the hero can fill exactly the rest of the screen.
@@ -71,7 +70,12 @@ export default function Header() {
           <ThemeToggle />
 
           <div className="hidden md:block">
-            <Button as="a" href={resumeHref} download variant="primary">
+            <Button
+              as="a"
+              href={profile.resumeHref}
+              download={profile.resumeFileName}
+              variant="primary"
+            >
               Download Resume
             </Button>
           </div>
@@ -90,7 +94,8 @@ export default function Header() {
           {menuOpen && (
             <MobileNav
               links={navLinks}
-              resumeHref={resumeHref}
+              resumeHref={profile.resumeHref}
+              resumeFileName={profile.resumeFileName}
               onClose={() => setMenuOpen(false)}
             />
           )}
