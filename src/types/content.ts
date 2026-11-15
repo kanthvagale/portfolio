@@ -37,12 +37,19 @@ export interface SkillCategory {
   items: SkillItem[];
 }
 
+export interface Screenshot {
+  src: string; // image path in public/
+  alt: string;
+}
+
 export interface Project {
   name: string;
   description: string;
   tech: string[];
   timeframe: string;
-  thumbnail?: string; // optional image path — falls back to a placeholder when absent
+  thumbnail?: string; // optional image path in public/ — falls back to a placeholder when absent
+  video?: string; // optional promo video path in public/ — adds a "Watch promo" button
+  screenshots?: Screenshot[]; // optional app screenshots, shown in a strip under the promo video
   demoUrl?: string;
   sourceUrl?: string;
 }
